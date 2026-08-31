@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Vida Personal | Libra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0058A0">
+<link rel="icon" type="image/x-icon" href="/images/1024-1130-modified.png">
+<script>(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+<link rel="preload stylesheet" href="/assets/css/style.D44paibT.css" as="style">
+  <link rel="preload stylesheet" href="/assets/css/vp-icons.css" as="style">
+  <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="modulepreload" href="/assets/chunks/theme.Dz8_78j_.js">
+  <link rel="modulepreload" href="/assets/chunks/framework.ChSPpK7P.js">
+  <link rel="modulepreload" href="/assets/index.md.D8M8s7cJ.lean.js">
+<style>
+  :root, html.dark{
+  --vp-nav-bg-color: var(--vp-c-bg);
+}
+  :root{
+    
+
+    --vp-c-bg:#ffffff;
+    --vp-c-bg-alt:#f6f6f7;
+    --vp-c-bg-elv:#ffffff;
+    --vp-c-bg-soft:#f6f6f7;
+
+    --vp-c-text-1:rgba(60,60,67,0.92);
+    --vp-c-text-2:rgba(60,60,67,0.7);
+    --vp-c-divider:rgba(60,60,67,0.12);
+
+    --vp-font-family-base:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+
+  html.dark{
+    --vp-c-bg:#1b1b1f;
+    --vp-c-bg-alt:#161618;
+    --vp-c-bg-elv:#202127;
+    --vp-c-bg-soft:#202127;
+
+    --vp-c-text-1:rgba(255,255,245,0.86);
+    --vp-c-text-2:rgba(235,235,245,0.6);
+    --vp-c-divider:rgba(82,82,89,0.32);
+
+    --vp-c-brand-soft:rgba(0,120,200,0.16);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--vp-c-bg);
+    color:var(--vp-c-text-1);
+    font-family:var(--vp-font-family-base);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    transition:background-color .3s ease,color .3s ease;
+  }
+
+  a{ color:var(--vp-c-brand-1); }
+
+  /* ---------- nav (mirrors VPNavBar) ---------- */
+  header.nav{
+    position:sticky;
+    top:0;
+    z-index:20;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:64px;
+    padding:0 24px;
+    background-color:var(--vp-c-bg);
+    border-bottom:1px solid var(--vp-c-divider);
+  }
+  .nav .title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--vp-c-text-1);
+    text-decoration:none;
+  }
+  .nav .title img{ width:24px; height:24px; }
+  .nav-links{ display:flex; align-items:center; gap:24px; }
+  .nav-links a{
+    font-size:0.9rem;
+    color:var(--vp-c-text-2);
+    text-decoration:none;
+  }
+  .nav-links a:hover{ color:var(--vp-c-brand-1); }
+
+  .dark-toggle{
+    background:none;
+    border:none;
+    cursor:pointer;
+    color:var(--vp-c-text-2);
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+  }
+  .dark-toggle:hover{ color:var(--vp-c-brand-1); }
+  .dark-toggle svg{ width:20px; height:20px; }
+
+ 
+  .hero{
+    max-width:960px;
+    margin:0 auto;
+    padding:64px 24px 40px;
+    text-align:center;
+  }
+  .hero .name{
+    color:var(--vp-c-brand-1);
+    font-size:0.95rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    margin:0 0 12px;
+  }
+  .hero h1{
+    font-size:clamp(1.8rem,4vw,2.5rem);
+    font-weight:700;
+    letter-spacing:-0.02em;
+    margin:0 0 16px;
+    color:var(--vp-c-text-1);
+  }
+  .hero p.tagline{
+    color:var(--vp-c-text-2);
+    font-size:1.05rem;
+    max-width:600px;
+    margin:0 auto;
+  }
+
+  
+  .timeline-wrap{
+    max-width:880px;
+    margin:32px auto 100px;
+    padding:0 24px;
+  }
+
+  .placeholder-note{
+    border:1px dashed var(--vp-c-brand-1);
+    border-radius:8px;
+    background:var(--vp-c-brand-soft);
+    padding:14px 18px;
+    color:var(--vp-c-text-2);
+    font-size:0.88rem;
+    margin-bottom:40px;
+  }
+  .placeholder-note code{
+    color:var(--vp-c-brand-1);
+    background:var(--vp-c-bg-soft);
+    padding:1px 6px;
+    border-radius:4px;
+    font-size:0.85em;
+  }
+
+  .timeline{ position:relative; }
+
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:6px;
+    bottom:6px;
+    width:2px;
+    background:var(--vp-c-divider);
+  }
+  @media (min-width:760px){
+    .timeline::before{ left:50%; transform:translateX(-1px); }
+  }
+
+  .entry{
+    position:relative;
+    padding:0 0 48px 56px;
+  }
+  .entry:last-child{ padding-bottom:0; }
+
+  .entry::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:4px;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:var(--vp-c-bg);
+    border:2px solid var(--vp-c-brand-1);
+    transform:translateX(-6px);
+    box-shadow:0 0 0 4px var(--vp-c-brand-soft);
+  }
+
+  @media (min-width:760px){
+    .entry{ width:50%; padding:0 0 48px 0; }
+    .entry.right{ margin-left:50%; }
+    .entry:not(.right){ padding-right:40px; text-align:right; }
+    .entry.right{ padding-left:40px; text-align:left; }
+
+    .entry::before{ left:auto; right:-7px; transform:none; }
+    .entry.right::before{ left:-7px; right:auto; }
+  }
+
+  .entry .date{
+    display:inline-block;
+    color:var(--vp-c-brand-1);
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    background:var(--vp-c-brand-soft);
+    border-radius:999px;
+    padding:3px 12px;
+    margin-bottom:10px;
+  }
+
+  .card{
+    background:var(--vp-c-bg-soft);
+    border:1px solid var(--vp-c-divider);
+    border-radius:12px;
+    padding:18px 20px;
+    transition:border-color .2s ease;
+  }
+  .card:hover{ border-color:var(--vp-c-brand-1); }
+
+  .card h3{
+    margin:0 0 4px;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--vp-c-text-1);
+  }
+  .card .role{
+    color:var(--vp-c-text-2);
+    font-size:0.88rem;
+    margin:0 0 10px;
+  }
+  .card p.desc{
+    margin:0;
+    color:var(--vp-c-text-2);
+    font-size:0.9rem;
+  }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+  .entry:not(.right) .tags{ justify-content:flex-start; }
+  @media (min-width:760px){
+    .entry:not(.right) .tags{ justify-content:flex-end; }
+  }
+  .tag{
+    font-size:0.72rem;
+    color:var(--vp-c-text-2);
+    background:var(--vp-c-bg-alt);
+    border:1px solid var(--vp-c-divider);
+    border-radius:6px;
+    padding:2px 8px;
+  }
+
+  
+  footer.VPFooter{
+    border-top:1px solid var(--vp-c-divider);
+    padding:28px 24px 36px;
+    text-align:center;
+    color:var(--vp-c-text-2);
+    font-size:0.85rem;
+  }
+  footer.VPFooter a{ color:var(--vp-c-text-2); text-decoration:underline; text-underline-offset:2px; }
+  footer.VPFooter a:hover{ color:var(--vp-c-brand-1); }
+  footer.VPFooter .divider{ margin:0 8px; }
+  footer.VPFooter .copyright{ margin-top:6px; }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .card,body{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+    <div class="Layout" data-v-e5b1bae6>
+      <span tabindex="-1" data-v-d0347f49></span>
+      <a href="#VPContent" class="VPSkipLink visually-hidden" data-v-d0347f49>Skip to content</a>
+      <header class="VPNav" data-v-e5b1bae6 data-v-b4d83c7e>
+        <div class="VPNavBar" data-v-b4d83c7e data-v-cea3f7fa>
+          <div class="wrapper" data-v-cea3f7fa>
+            <div class="container" data-v-cea3f7fa>
+              <div class="title" data-v-cea3f7fa>
+                <div class="VPNavBarTitle" data-v-cea3f7fa data-v-e47b4765>
+                  <a class="title" href="/" data-v-e47b4765>
+                    <img class="VPImage logo" src="/images/1024-1130-modified.png" width="24" height="24" alt data-v-71129202>
+                    <span data-v-e47b4765>Libra</span>
+                  </a>
+                </div>
+              </div>
+              <div class="content" data-v-cea3f7fa>
+                <div class="content-body" data-v-cea3f7fa>
+                  <nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-cea3f7fa data-v-03607a70>
+                    <span id="main-nav-aria-label" class="visually-hidden" data-v-03607a70>Main navigation</span>
+                    <div class="VPFlyout VPNavBarMenuGroup" data-v-03607a70 data-v-73878474>
+                      <button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-73878474>
+                        <span class="text" data-v-73878474>
+                          <span data-v-73878474>Extras</span>
+                          <span class="vpi-chevron-down text-icon" data-v-73878474></span>
+                        </span>
+                      </button>
+                      <div class="menu" data-v-73878474>
+                        <div class="VPMenu" data-v-73878474 data-v-344e410b>
+                          <div class="items" data-v-344e410b>
+                            <div class="VPMenuLink" data-v-344e410b data-v-9b63c25a>
+                              <a class="VPLink link" href="pc.html" data-v-9b63c25a>
+                                <span data-v-9b63c25a>Stack</span>
+                              </a>
+                            </div>
+                            <div class="VPMenuLink" data-v-344e410b data-v-9b63c25a>
+                              <a class="VPLink link" href="blog.html" data-v-9b63c25a>
+                                <span data-v-9b63c25a>Blog</span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+                  <div class="VPNavBarAppearance appearance" data-v-cea3f7fa data-v-83a70e2f>
+                    <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                  </div>
+                  <div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-cea3f7fa data-v-0a16a001 data-v-a24f9f74>
+                    <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US" aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-linkedin"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/" aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    </a>
+                  </div>
+                  <div class="VPFlyout VPNavBarExtra extra" data-v-cea3f7fa data-v-d5af21fa data-v-73878474>
+                    <button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-73878474>
+                      <span class="vpi-more-horizontal icon" data-v-73878474></span>
+                    </button>
+                    <div class="menu" data-v-73878474>
+                      <div class="VPMenu" data-v-73878474 data-v-344e410b>
+                        <div class="group" data-v-d5af21fa>
+                          <div class="item appearance" data-v-d5af21fa>
+                            <p class="label" data-v-d5af21fa>Apariencia</p>
+                            <div class="appearance-action" data-v-d5af21fa>
+                              <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="group" data-v-d5af21fa>
+                          <div class="item social-links" data-v-d5af21fa>
+                            <div class="VPSocialLinks social-links-list" data-v-d5af21fa data-v-a24f9f74>
+                              <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US" aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-linkedin"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/" aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-cea3f7fa data-v-7380cd28>
+                    <span class="container" data-v-7380cd28>
+                      <span class="top" data-v-7380cd28></span>
+                      <span class="middle" data-v-7380cd28></span>
+                      <span class="bottom" data-v-7380cd28></span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="VPNavScreen" id="VPNavScreen" data-v-2860b3da style="display:none;">
+        <div class="container" data-v-2860b3da>
+          <div class="menu" data-v-2860b3da>
+            <div class="VPNavScreenMenuGroup" data-v-705739bc>
+              <button class="button" data-v-705739bc>
+                <span data-v-705739bc>Extras</span>
+                <span class="vpi-plus button-icon" data-v-705739bc></span>
+              </button>
+              <div class="items" data-v-705739bc>
+                <a class="VPNavScreenMenuLink" href="pc.html" data-v-c0efecf9>Stack</a>
+                <a class="VPNavScreenMenuLink" href="blog.html" data-v-c0efecf9>Blog</a>
+              </div>
+            </div>
+          </div>
+          <div class="appearance" data-v-2860b3da>
+            <div class="VPNavScreenAppearance" data-v-19b7c1b5>
+              <p class="text" data-v-19b7c1b5>Apariencia</p>
+              <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+            </div>
+          </div>
+          <div class="social-links" data-v-2860b3da>
+            <div class="VPSocialLinks" data-v-a24f9f74>
+              <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US" aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-linkedin"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/" aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<section class="hero">
+
+  <p class="name">Vida Personal</p>
+  <h1>Eduardo Calderón Mora</h1>
+  <p class="tagline">Una línea de tiempo de mi formación académica y trayectoria profesional como Ingeniero en Sistemas de Computación.</p>
+</section>
+
+<div class="timeline-wrap">
+  <!--<div class="placeholder-note">
+    Estructura de ejemplo — reemplazá cada <code>&lt;div class="entry"&gt;</code> con tus hitos reales
+    (fechas, instituciones, descripciones). Agregá o quitá la clase <code>right</code> en cada entrada para alternar el lado en pantallas grandes.
+  </div>-->
+  <div class="timeline">
+    <div class="entry">
+      <span class="date">3 de Octubre del 2003</span>
+      <div class="card">
+        <h3>Nacimiento</h3>
+        <p class="role">Hospital Calderón Guardia</p>
+        <p class="desc">Según lo documentado por el doctor al momento de mi nacimiento, yo nací a las 5:55 PM del día viernes. De acuerdo al calendario mi signo zodiacal sería Libra siendo esto inspiración para el nombre del servidor.</p>
+        <div class="tags">
+          <span class="tag">Personal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry right">
+      <span class="date">2006 — 2009</span>
+      <div class="card">
+        <h3>Educación Preescolar</h3>
+        <p class="role">Saint Joseph School</p>
+        <p class="desc">Sin mucho que explicar, en esta fecha termine el ciclo de transición de la educación preescolar.</p>
+        <div class="tags">
+          <span class="tag">Profesional</span>
+		  <span class="tag">Preescolar</span>
+		  <span class="tag">Académico</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="date">2010 — 2015</span>
+      <div class="card">
+        <h3>Educación Primaria</h3>
+        <p class="role">Saint Joseph School</p>
+        <p class="desc">Finalice mi educación primaria recibiendo el título por el cumplimiento de los estudios del segundo ciclo de la educación general básica.</p>
+        <div class="tags">
+          <span class="tag">Profesional</span>
+          <span class="tag">Escuela</span>
+		  <span class="tag">Académico</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry right">
+      <span class="date">2016 — 2018</span>
+      <div class="card">
+        <h3>Certificado de Noveno Año</h3>
+        <p class="role">Saint Joseph High School</p>
+        <p class="desc">En el 2019 recibo oficialmente el título de conclusión de mis estudios de educación general básica.</p>
+        <div class="tags">
+          <span class="tag">Profesional</span>
+		  <span class="tag">Colegio</span>
+		  <span class="tag">Académico</span>
+        </div>
+      </div>
+    </div>
+
+	<div class="entry">
+      <span class="date">2019 — 2020</span>
+      <div class="card">
+        <h3>Bachillerato</h3>
+        <p class="role">Saint Joseph High School</p>
+        <p class="desc">En el auge de la pandemia de COVID-19 recibí mi título de conclusión de mis estudios de educación general media.</p>
+        <div class="tags">
+          <span class="tag">Profesional</span>
+		  <span class="tag">Colegio</span>
+		  <span class="tag">Académico</span>
+		</div>
+		&nbsp
+	  <div class="card">
+        <h3>MATEM</h3>
+        <p class="role">Universidad de Costa Rica</p>
+        <p class="desc">En mi último año de colegio me inscribí al curso de MA0125 de la Universidad de Costa Rica en el cual aprobé con una nota de 7,5/10.</p>
+      </div>
+	  &nbsp
+	  <div class="card">
+        <h3>TOEIC</h3>
+        <p class="role">Educational Testing Service</p>
+        <p class="desc">Este mismo año, como requisito para la graduación de bachillerato realice el examen TOEIC en el cual obtuve los puntajes de C1 en Reading/Listening y C2 en Speaking.</p>
+      </div>
+    </div>
+    </div>
+	<div class="entry right">
+      <span class="date">2021 — 2025</span>
+      <div class="card">
+        <h3>Ingeniería en Sistema de Computación</h3>
+        <p class="role">Universidad Fidélitas</p>
+        <p class="desc">Debido a mi gusto e interés por la tecnología decidí convertirme en profesional del área de computación. Durante cuatro años estudié la carrera universitaria de Ingeniería en Sistema de Computación. A lo largo de mi tiempo estudiando pude de igual manera obtener experiencia laboral en el área.</p>
+        <div class="tags">
+          <span class="tag">Profesional</span>
+		  <span class="tag">Universidad</span>
+		  <span class="tag">Académico</span>
+		  <span class="tag">Laboral</span>
+        </div>
+		&nbsp
+	  <div class="card">
+        <h3>TCU</h3>
+        <p class="role">Red de Cuido Obras de Jesus</p>
+        <p class="desc">Como requisito de graduación de bachillerato de la carrera me encargue de ayudar a una institución de ayuda social. 
+			Durante el proceso mis labores fueron tres principales: <br>
+			1. La primera fue la elaboración del laboratorio tecnológico a usar. Para esto instale el sistema operativo, obtuve los programas solicitados y configure las computadoras. <br>
+			2. Como segunda labor se desarrolló un programa de aprendizaje para los niños y jóvenes que atienden la institución. Este programa permitió a los encargados crear diferentes preguntas de diferentes áreas de aprendizaje y a los niños y jóvenes competir por obtener un mejor puntaje mediante respuestas correctas a las preguntas. Esto también permitía a los encargados obtener datos de rendimiento de los estudiantes.<br>
+			3. Por último, se inició un servidor centralizado en la organización para que los encargados pudieran tener varios servicios 24/7 como un servicio de almacenamiento conectado a la red (NAS).</p>
+      </div>
+	  &nbsp
+	  <div class="card">
+        <h3>CCNAv7: Switching, Routing, and Wireless Essentials</h3>
+        <p class="role">Cisco Networking Academy</p>
+        <p class="desc">Durante mis estudios universitarios y para el cumplimiento de cursos de redes, me inscribí al programa de CCNA de, en su momento, Netacad. Este lo completé de manera satisfactoria el 22 de septiembre del 2022.</p>
+      </div>
+	  &nbsp
+	  <div class="card">
+        <h3>Scrum Fundamentals</h3>
+        <p class="role">VMEdu</p>
+        <p class="desc">Durante mis estudios universitarios y para el cumplimiento de cursos de administración de sistemas me inscribí a un programa donde se me enseño los fundamentos de la metodología Scrum para el desarrollo de software.</p>
+      </div>
+	  &nbsp
+	  <div class="card">
+        <h3>Proyecto de Graduacion de Bachillerato</h3>
+        <p class="role">Molino Central de Coronado</p>
+        <p class="desc">Como requisito de graduación de bachillerato de la carrera me encargue de desarrollar en grupo un sistema de Punto de Venta (PoS) para el restaurante del Molino Central de Coronado. El programa incluía funciones de Punto de Venta, Facturación, Gestión de Empleados e Inventario. Para la lista completa de funciones y código visitar la página del proyecto: <a href="https://github.com/Educal72/Proyecto-de-Graduaci-n-Grupo-9">GitHub</a> </p>
+      </div>
+      </div>
+      </div>
+	  <div class="entry">
+      <span class="date">2025 — Actualmente</span>
+      <div class="card">
+        <h3>Licenciatura en Ingeniería en Sistema de Computación</h3>
+        <p class="role">Universidad Fidélitas</p>
+        <p class="desc">Una vez terminado el grado de bachillerato seguí con mis estudios con el objetivo de obtener el grado de Licenciatura.</p>
+        <div class="tags">
+          <span class="tag">Profesional</span>
+		  <span class="tag">Universidad</span>
+		  <span class="tag">Académico</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<footer class="VPFooter">
+  <p class="message">
+    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Código abierto bajo licencia Apache</a>
+    <span class="divider">|</span>
+    <a href="/privacy.html">Política de Datos</a>
+  </p>
+  <p class="copyright">Copyright © 2026 Libra Server</p>
+</footer>
+
+ <script>
+    // Hamburger menu
+    const hamburger = document.querySelector('.VPNavBarHamburger');
+    const navScreen = document.getElementById('VPNavScreen');
+
+    hamburger.addEventListener('click', () => {
+  const isOpen = hamburger.classList.toggle('active');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  navScreen.style.display = isOpen ? 'block' : 'none';
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) {
+    navScreen.style.display = 'none';
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+});
+
+    // Mobile Extras toggle
+    const mobileExtrasBtn = document.querySelector('.VPNavScreenMenuGroup .button');
+    const mobileExtrasGroup = document.querySelector('.VPNavScreenMenuGroup');
+
+    if (mobileExtrasBtn && mobileExtrasGroup) {
+      mobileExtrasBtn.addEventListener('click', () => {
+        mobileExtrasGroup.classList.toggle('open');
+      });
+    }
+
+    // Desktop Extras dropdown
+    const flyoutBtn = document.querySelector('.VPNavBarMenuGroup .button');
+    const flyoutMenu = document.querySelector('.VPNavBarMenuGroup .menu');
+
+    if (flyoutBtn && flyoutMenu) {
+      flyoutBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = flyoutBtn.getAttribute('aria-expanded') === 'true';
+        flyoutBtn.setAttribute('aria-expanded', String(!isOpen));
+        flyoutMenu.style.opacity = isOpen ? '0' : '1';
+        flyoutMenu.style.visibility = isOpen ? 'hidden' : 'visible';
+        flyoutMenu.style.transform = 'translateY(0)';
+        flyoutMenu.style.display = isOpen ? 'none' : 'block';
+      });
+
+      document.addEventListener('click', (e) => {
+  if (
+    !flyoutBtn.contains(e.target) &&
+    !flyoutMenu.contains(e.target)
+  ) {
+    flyoutBtn.setAttribute('aria-expanded', 'false');
+    flyoutMenu.style.opacity = '0';
+    flyoutMenu.style.visibility = 'hidden';
+    flyoutMenu.style.display = 'none';
+  }
+});
+      const sunSVG = `<svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="sun"><path d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z"></path><path d="M12,4c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,3.6,12.6,4,12,4z"></path><path d="M12,24c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,23.6,12.6,24,12,24z"></path><path d="M5.6,6.6c-0.3,0-0.5-0.1-0.7-0.3L3.5,4.9c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C6.2,6.5,5.9,6.6,5.6,6.6z"></path><path d="M19.8,20.8c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C20.3,20.7,20,20.8,19.8,20.8z"></path><path d="M3,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S3.6,13,3,13z"></path><path d="M23,13h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path><path d="M4.2,20.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C4.7,20.7,4.5,20.8,4.2,20.8z"></path><path d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z"></path></svg>`;
+
+const moonSVG = `<svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg>`;
+
+const darkModeBtns = document.querySelectorAll('.CustomSwitchAppearance');
+
+function updateIcons(isDark) {
+  darkModeBtns.forEach(btn => {
+    btn.innerHTML = isDark ? moonSVG : sunSVG;
+    btn.setAttribute('aria-checked', isDark);
+  });
+}
+
+// Set initial state
+updateIcons(document.documentElement.classList.contains('dark'));
+
+darkModeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isCurrentlyDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('vitepress-theme-appearance', isCurrentlyDark ? 'dark' : 'light');
+    updateIcons(isCurrentlyDark);
+  });
+});
+    }
+  </script>
+
+</body>
+</html>
