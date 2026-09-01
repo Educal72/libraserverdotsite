@@ -74,7 +74,7 @@
       font-weight:600;
       letter-spacing:.04em;
       text-transform:uppercase;
-      margin:0 0 8px;
+      margin:0;
     }
     .spec-card .post-excerpt{
       color:var(--vp-c-text-2);
@@ -103,7 +103,7 @@
       margin:0 0 12px;
     }
     .hero h1{
-      font-size:clamp(2.2rem,5vw,2.5rem);
+      font-size:clamp(2.2rem,5vw,3.4rem);
       font-weight:700;
       letter-spacing:-0.02em;
       margin:0 0 16px;
@@ -156,11 +156,6 @@
       border-radius:4px;
       padding:2px 8px;
     }
-    .spec-card .post-date{
-      color:var(--vp-c-text-2);
-      font-size:0.78rem;
-      margin:0;
-    }
     .post-author{
       color:var(--vp-c-text-2);
       font-size:0.8rem;
@@ -173,8 +168,6 @@
       padding:40px 20px;
       font-size:0.95rem;
     }
-    .Layout{ display:flex; flex-direction:column; min-height:100vh; }
-.vp-doc.setup-page{ flex-grow:1; width:100%; }
   </style>
 </head>
 
@@ -420,10 +413,13 @@
   <script>
     // ── Ghost Content API config ──────────────────────────────
     // Fill these in from Ghost Admin → Settings → Integrations → your custom integration
-    const GHOST_URL = "https://ghost.educal.duckdns.org";   // Ghost's API URL, no trailing slash
+        const GHOST_URL = "https://libraserver.site";   // Ghost's API URL, no trailing slash
     const GHOST_KEY = "a54fba8c83b943801a86abcfeb";
     // ────────────────────────────────────────────────────────────
 
+    // Ghost's public API never returns tags with zero posts attached — that's an
+    // intentional platform limit, not something a request parameter can override.
+    // So the 3 category names live here, always shown regardless of post count.
     const CATEGORIES = ["Entretenimiento", "Tecnología", "Videojuegos"];
     let allPosts = [];
     let activeCategory = "Todas";
@@ -432,9 +428,9 @@
       return (str || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
+    // Category = each post's primary tag in Ghost.
     function postCategoryName(post) {
-      const tag = post.tags && post.tags.find(t => CATEGORIES.some(c => normalize(c) === normalize(t.name)));
-      return tag ? tag.name : null;
+      return post.primary_tag ? post.primary_tag.name : null;
     }
 
     function renderFilters() {
@@ -459,7 +455,10 @@
         : allPosts.filter(p => normalize(postCategoryName(p)) === normalize(activeCategory));
 
       if (filtered.length === 0) {
-        listEl.innerHTML = '<p class="empty-state">No hay entradas en esta categoría todavía.</p>';
+        const msg = allPosts.length === 0
+          ? 'Aún no hay entradas publicadas.'
+          : 'No hay entradas en esta categoría todavía.';
+        listEl.innerHTML = `<p class="empty-state">${msg}</p>`;
         return;
       }
 
@@ -492,6 +491,8 @@
     async function loadPosts() {
       const listEl = document.getElementById('post-list');
 
+      renderFilters();
+
       if (!GHOST_KEY || GHOST_KEY.startsWith('PASTE_')) {
         listEl.innerHTML = '<p class="empty-state">Falta configurar la API key de Ghost.</p>';
         return;
@@ -505,12 +506,6 @@
         const data = await res.json();
         allPosts = data.posts || [];
 
-        if (allPosts.length === 0) {
-          listEl.innerHTML = '<p class="empty-state">Aún no hay entradas publicadas.</p>';
-          return;
-        }
-
-        renderFilters();
         renderPosts();
       } catch (err) {
         listEl.innerHTML = '<p class="empty-state">No se pudieron cargar las entradas. Intenta de nuevo más tarde.</p>';
