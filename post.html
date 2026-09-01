@@ -14,9 +14,9 @@
   <style>
     :root, html.dark{ --vp-nav-bg-color: var(--vp-c-bg); }
 
-    .vp-doc.setup-page{ max-width:760px; margin:0 auto; padding:calc(var(--vp-nav-height) + 32px) 24px 100px; flex-grow:1; width:100%; }
+    .vp-doc.setup-page{ max-width:960px; margin:0 auto; padding:64px 24px 100px; }
 
-    .Layout{ display:flex; flex-direction:column; min-height:100vh; }
+    .setup-hero{ text-align:center; margin-bottom:32px; }
 
     footer.VPFooter{
       border-top:1px solid var(--vp-c-divider);
@@ -49,12 +49,70 @@
       text-transform:uppercase;
       margin:0 0 12px;
     }
+    .post-meta-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:0 0 12px;
+    }
+    .post-tag-badge{
+      color:var(--vp-c-brand-1);
+      font-size:0.78rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      background:var(--vp-c-bg-mute, rgba(0,88,160,0.1));
+      border-radius:4px;
+      padding:2px 8px;
+    }
+    .post-author{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:12px 0 24px;
+    }
+    .post-author img{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      object-fit:cover;
+      flex-shrink:0;
+    }
+    .post-author .author-info{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .post-author .author-name{
+      color:var(--vp-c-text-1);
+      font-size:0.9rem;
+      font-weight:600;
+    }
+    .post-author .author-contact{
+      color:var(--vp-c-text-2);
+      font-size:0.8rem;
+    }
+    .post-author .author-contact a{
+      color:var(--vp-c-text-2);
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+    .post-author .author-contact a:hover{ color:var(--vp-c-brand-1); }
     .post-feature-img{
       width:100%;
       border-radius:12px;
       margin:24px 0;
       display:block;
     }
+    .empty-state{
+      text-align:center;
+      color:var(--vp-c-text-2);
+      padding:60px 20px;
+      font-size:0.95rem;
+    }
+    .Layout{ display:flex; flex-direction:column; min-height:100vh; }
+.vp-doc.setup-page{ flex-grow:1; width:100%; }
   </style>
 </head>
 
@@ -191,7 +249,7 @@
       <a class="back-link" href="blog.html">&larr; Volver al blog</a>
 
       <div id="post-container">
-        <p>Cargando entrada...</p>
+        <p class="empty-state">Cargando entrada...</p>
       </div>
     </main>
 
@@ -296,6 +354,8 @@
     // Fill these in from Ghost Admin → Settings → Integrations → your custom integration
     const GHOST_URL = "https://ghost.educal.duckdns.org";   // Ghost's API URL, no trailing slash
     const GHOST_KEY = "a54fba8c83b943801a86abcfeb";
+    // Ghost's public API never exposes author emails (privacy by design) — set the contact address here yourself.
+    const CONTACT_EMAIL = "educal72@libraserver.site";
     // ────────────────────────────────────────────────────────────
 
     function escapeHtml(str) {
@@ -310,12 +370,12 @@
       const slug = params.get('slug');
 
       if (!slug) {
-        container.innerHTML = '<p>No se especificó ninguna entrada.</p>';
+        container.innerHTML = '<p class="empty-state">No se especificó ninguna entrada.</p>';
         return;
       }
 
       if (!GHOST_KEY || GHOST_KEY.startsWith('PASTE_')) {
-        container.innerHTML = '<p>Falta configurar la API key de Ghost.</p>';
+        container.innerHTML = '<p class="empty-state">Falta configurar la API key de Ghost.</p>';
         return;
       }
 
@@ -328,7 +388,7 @@
         const post = data.posts && data.posts[0];
 
         if (!post) {
-          container.innerHTML = '<p>Entrada no encontrada.</p>';
+          container.innerHTML = '<p class="empty-state">Entrada no encontrada.</p>';
           return;
         }
 
@@ -340,16 +400,37 @@
           ? `<img class="post-feature-img" src="${post.feature_image}" alt="${escapeHtml(post.title)}">`
           : '';
 
+        const CATEGORIES = ["Entretenimiento", "Tecnología", "Videojuegos"];
+        const normalize = s => (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const catTag = post.tags && post.tags.find(t => CATEGORIES.some(c => normalize(c) === normalize(t.name)));
+        const catBadge = catTag ? `<span class="post-tag-badge">${escapeHtml(catTag.name)}</span>` : '';
+        const authorName = post.primary_author ? post.primary_author.name : null;
+        const authorPhoto = post.primary_author ? post.primary_author.profile_image : null;
+        const showContact = CONTACT_EMAIL && !CONTACT_EMAIL.startsWith('PASTE_');
+        const authorBlock = authorName ? `
+          <div class="post-author">
+            ${authorPhoto ? `<img src="${authorPhoto}" alt="${escapeHtml(authorName)}">` : ''}
+            <div class="author-info">
+              <span class="author-name">${escapeHtml(authorName)}</span>
+              ${showContact ? `<span class="author-contact"><a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a></span>` : ''}
+            </div>
+          </div>
+        ` : '';
+
         // post.html from Ghost's Content API is already sanitized server-side HTML,
         // and inherits .vp-doc typography (h1-h6, p, a, blockquote, code, lists) from the site's own stylesheet
         container.innerHTML = `
-          <p class="post-date">${dateStr}</p>
+          <div class="post-meta-row">
+            ${catBadge}
+            <p class="post-date" style="margin:0;">${dateStr}</p>
+          </div>
           <h1>${escapeHtml(post.title)}</h1>
+          ${authorBlock}
           ${img}
           ${post.html || ''}
         `;
       } catch (err) {
-        container.innerHTML = '<p>No se pudo cargar la entrada. Intenta de nuevo más tarde.</p>';
+        container.innerHTML = '<p class="empty-state">No se pudo cargar la entrada. Intenta de nuevo más tarde.</p>';
         console.error('Ghost fetch error:', err);
       }
     }
