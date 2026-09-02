@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
-  <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+  <script>(()=>{const e=localStorage.getItem("vitepress-theme-appearance");(e!=="light")&&document.documentElement.classList.add("dark")})();</script>
   <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:site_name" content="">
@@ -295,11 +295,13 @@
     // Hamburger menu
     const hamburger = document.querySelector('.VPNavBarHamburger');
     const navScreen = document.getElementById('VPNavScreen');
+    const navBar = document.querySelector('.VPNav');
 
     hamburger.addEventListener('click', () => {
   const isOpen = hamburger.classList.toggle('active');
   hamburger.setAttribute('aria-expanded', isOpen);
   navScreen.style.display = isOpen ? 'block' : 'none';
+  if (navBar) { navBar.style.transition = 'none'; navBar.style.backgroundColor = isOpen ? 'var(--vp-c-bg)' : ''; }
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
@@ -308,6 +310,7 @@ window.addEventListener('resize', () => {
     navScreen.style.display = 'none';
     hamburger.classList.remove('active');
     hamburger.setAttribute('aria-expanded', 'false');
+    if (navBar) { navBar.style.transition = 'none'; navBar.style.backgroundColor = ''; }
     document.body.style.overflow = '';
   }
 });

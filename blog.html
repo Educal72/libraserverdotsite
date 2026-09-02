@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#0058A0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/images/1024-1130-modified.png">
-  <script>(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+  <script>(()=>{const e=localStorage.getItem("vitepress-theme-appearance");(e!=="light")&&document.documentElement.classList.add("dark")})();</script>
 
   <style>
     :root, html.dark{ --vp-nav-bg-color: var(--vp-c-bg); }
