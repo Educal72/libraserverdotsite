@@ -1,32 +1,41 @@
 (function () {
-  const isProduction = window.location.hostname === "libraserver.site";
-
-  if (!isProduction) {
+  if (!["libraserver.site", "www.libraserver.site"].includes(window.location.hostname)) {
     return;
   }
 
   const routes = {
-    "index.html": "/",
-    "blog.html": "/blog",
-    "cv.html": "/cv",
-    "pc.html": "/pc",
-    "post.html": "/post",
-    "privacy.html": "/privacy"
+    "/index.html": "/",
+    "/blog.html": "/blog",
+    "/cv.html": "/cv",
+    "/pc.html": "/pc",
+    "/post.html": "/post",
+    "/privacy.html": "/privacy"
   };
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("a[href]").forEach(function (link) {
-      const href = link.getAttribute("href");
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
 
-      if (!href || href.startsWith("#") || href.startsWith("http")) {
-        return;
-      }
+    if (
+      !href ||
+      href.startsWith("#") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:")
+    ) {
+      return;
+    }
 
-      const [path, query] = href.split("?");
+    const url = new URL(href, window.location.href);
 
-      if (routes[path]) {
-        link.href = routes[path] + (query ? "?" + query : "");
-      }
-    });
+    if (url.origin !== window.location.origin) {
+      return;
+    }
+
+    const target = routes[url.pathname];
+
+    if (!target) {
+      return;
+    }
+
+    link.href = target + url.search + url.hash;
   });
 })();
