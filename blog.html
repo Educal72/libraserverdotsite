@@ -17,8 +17,7 @@
     .vp-doc.setup-page{ max-width:960px; margin:0 auto; padding:48px 24px 100px; }
 
     .setup-hero{ text-align:center; margin-bottom:32px; }
-
-    .setup-hero{ text-align:center; margin-bottom:32px; }
+	
     .setup-hero .eyebrow{
       color:var(--vp-c-brand-1);
       font-size:0.85rem;
@@ -58,8 +57,7 @@
       display:block;
       transition:border-color .2s ease;
     }
-    .spec-card:hover{ border-color:var(--vp-c-brand-1);   text-decoration:none !important;
-  color:inherit !important;}
+    .spec-card:hover{ border-color:var(--vp-c-brand-1); text-decoration:none !important;}
     .spec-card h3{
       margin:0 0 8px;
       font-size:1.15rem;
@@ -104,7 +102,7 @@
       margin:0 0 12px;
     }
     .hero h1{
-      font-size:clamp(2.2rem,5vw,3.4rem);
+      font-size:clamp(2.2rem,5vw,2.5rem);
       font-weight:700;
       letter-spacing:-0.02em;
       margin:0 0 16px;
@@ -169,6 +167,26 @@
       padding:40px 20px;
       font-size:0.95rem;
     }
+
+    .lang-toggle{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-width:34px; height:28px; padding:0 8px;
+      border:1px solid var(--vp-c-divider); border-radius:14px;
+      background:var(--vp-c-bg-soft); color:var(--vp-c-text-2);
+      font-size:0.72rem; font-weight:700; letter-spacing:.02em;
+      cursor:pointer; margin-left:8px;
+    }
+  .lang-toggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:34px; height:28px; padding:0 8px;
+    border:1px solid var(--vp-c-divider); border-radius:14px;
+    background:var(--vp-c-bg-soft); color:var(--vp-c-text-2);
+    font-size:0.72rem; font-weight:700; letter-spacing:.02em;
+    cursor:pointer; margin-left:8px;
+  }
+  .lang-toggle:hover{ border-color:var(--vp-c-brand-1); color:var(--vp-c-text-1); }
+  .appearance-action{ display:flex; align-items:center; }
+  .VPNavScreenAppearance{ display:flex; align-items:center; justify-content:space-between; }
   </style>
 </head>
 
@@ -196,7 +214,7 @@
                     <div class="VPFlyout VPNavBarMenuGroup" data-v-03607a70 data-v-73878474>
                       <button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-73878474>
                         <span class="text" data-v-73878474>
-                          <span data-v-73878474>Extras</span>
+                          <span data-v-73878474 data-i18n="navExtras">Extras</span>
                           <span class="vpi-chevron-down text-icon" data-v-73878474></span>
                         </span>
                       </button>
@@ -205,12 +223,12 @@
                           <div class="items" data-v-344e410b>
                             <div class="VPMenuLink" data-v-344e410b data-v-9b63c25a>
                               <a class="VPLink link" href="pc.html" data-v-9b63c25a>
-                                <span data-v-9b63c25a>Stack</span>
+                                <span data-v-9b63c25a data-i18n="navStack">Stack</span>
                               </a>
                             </div>
                             <div class="VPMenuLink" data-v-344e410b data-v-9b63c25a>
                               <a class="VPLink link" href="blog.html" data-v-9b63c25a>
-                                <span data-v-9b63c25a>Blog</span>
+                                <span data-v-9b63c25a data-i18n="navBlog">Blog</span>
                               </a>
                             </div>
                           </div>
@@ -220,6 +238,7 @@
                   </nav>
                   <div class="VPNavBarAppearance appearance" data-v-cea3f7fa data-v-83a70e2f>
                     <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                    <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
                   </div>
                   <div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-cea3f7fa data-v-0a16a001 data-v-a24f9f74>
                     <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
@@ -236,9 +255,10 @@
                       <div class="VPMenu" data-v-73878474 data-v-344e410b>
                         <div class="group" data-v-d5af21fa>
                           <div class="item appearance" data-v-d5af21fa>
-                            <p class="label" data-v-d5af21fa>Apariencia</p>
+                            <p class="label" data-v-d5af21fa data-i18n="navAppearance">Apariencia</p>
                             <div class="appearance-action" data-v-d5af21fa>
                               <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                              <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
                             </div>
                           </div>
                         </div>
@@ -267,6 +287,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </header>
 
@@ -275,19 +296,22 @@
           <div class="menu" data-v-2860b3da>
             <div class="VPNavScreenMenuGroup" data-v-705739bc>
               <button class="button" data-v-705739bc>
-                <span data-v-705739bc>Extras</span>
+                <span data-v-705739bc data-i18n="navExtras">Extras</span>
                 <span class="vpi-plus button-icon" data-v-705739bc></span>
               </button>
               <div class="items" data-v-705739bc>
-                <a class="VPNavScreenMenuLink" href="pc.html" data-v-c0efecf9>Stack</a>
-                <a class="VPNavScreenMenuLink" href="blog.html" data-v-c0efecf9>Blog</a>
+                <a class="VPNavScreenMenuLink" href="pc.html" data-v-c0efecf9 data-i18n="navStack">Stack</a>
+                <a class="VPNavScreenMenuLink" href="blog.html" data-v-c0efecf9 data-i18n="navBlog">Blog</a>
               </div>
             </div>
           </div>
           <div class="appearance" data-v-2860b3da>
             <div class="VPNavScreenAppearance" data-v-19b7c1b5>
-              <p class="text" data-v-19b7c1b5>Apariencia</p>
-              <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+              <p class="text" data-v-19b7c1b5 data-i18n="navAppearance">Apariencia</p>
+              <div style="display:flex;align-items:center;">
+                <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
+              </div>
             </div>
           </div>
           <div class="social-links" data-v-2860b3da>
@@ -303,23 +327,23 @@
       </div>
     <main class="vp-doc setup-page">
       <section class="hero">
-        <p class="name">Blog</p>
-        <h1>Últimas entradas</h1>
-        <p class="tagline">Notas sobre homelab, privacidad y lo que ande trasteando.</p>
+        <p class="name" data-i18n="navBlog">Blog</p>
+        <h1 data-i18n="blogHeroTitle">Últimas entradas</h1>
+        <p class="tagline" data-i18n="blogHeroTagline">Notas sobre homelab, privacidad y lo que ande trasteando.</p>
       </section>
 
       <div class="cat-filters" id="cat-filters"></div>
 
       <div id="post-list" class="spec-grid">
-        <p class="empty-state">Cargando entradas...</p>
+        <p class="empty-state" data-i18n="stateLoadingPosts">Cargando entradas...</p>
       </div>
     </main>
 
     <footer class="VPFooter">
   <p class="message">
-    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Código abierto bajo licencia Apache</a>
+    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" data-i18n="footerLicense">Código abierto bajo licencia Apache</a>
     <span class="divider">|</span>
-    <a href="/privacy.html">Política de Datos</a>
+    <a href="/privacy.html" data-i18n="footerPrivacy">Política de Datos</a>
   </p>
   <p class="copyright">Copyright © 2026 Libra Server</p>
 </footer>
@@ -414,8 +438,10 @@
   <script>
     // ── Ghost Content API config ──────────────────────────────
     // Fill these in from Ghost Admin → Settings → Integrations → your custom integration
-        const GHOST_URL = "https://libraserver.site";   // Ghost's API URL, no trailing slash
+    const GHOST_URL = "https://libraserver.site";   // Ghost's API URL, no trailing slash
     const GHOST_KEY = "a54fba8c83b943801a86abcfeb";
+    // Ghost's public API never exposes author emails (privacy by design) — set the contact address here yourself.
+    const CONTACT_EMAIL = "educal72@libraserver.site";
     // ────────────────────────────────────────────────────────────
 
     // Ghost's public API never returns tags with zero posts attached — that's an
@@ -429,6 +455,9 @@
       return (str || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
+    const T = () => (window.getSiteLang ? window.getSiteLang() : 'es');
+    const t = (key) => (window.I18N && window.I18N[key] ? window.I18N[key][T()] : key);
+
     // Category = each post's primary tag in Ghost.
     function postCategoryName(post) {
       return post.primary_tag ? post.primary_tag.name : null;
@@ -436,9 +465,9 @@
 
     function renderFilters() {
       const el = document.getElementById('cat-filters');
-      const cats = ["Todas", ...CATEGORIES];
+      const cats = [t('filterAll'), ...CATEGORIES];
       el.innerHTML = cats.map(cat => `
-        <button type="button" class="cat-filter${cat === activeCategory ? ' active' : ''}" data-cat="${escapeHtml(cat)}">${escapeHtml(cat)}</button>
+        <button type="button" class="cat-filter${cat === activeCategory || (cat === t('filterAll') && activeCategory === 'Todas') ? ' active' : ''}" data-cat="${escapeHtml(cat === t('filterAll') ? 'Todas' : cat)}">${escapeHtml(cat)}</button>
       `).join('');
       el.querySelectorAll('.cat-filter').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -456,14 +485,12 @@
         : allPosts.filter(p => normalize(postCategoryName(p)) === normalize(activeCategory));
 
       if (filtered.length === 0) {
-        const msg = allPosts.length === 0
-          ? 'Aún no hay entradas publicadas.'
-          : 'No hay entradas en esta categoría todavía.';
+        const msg = allPosts.length === 0 ? t('stateNoPostsYet') : t('stateNoPostsInCategory');
         listEl.innerHTML = `<p class="empty-state">${msg}</p>`;
         return;
       }
 
-      const dateFmt = new Intl.DateTimeFormat('es-CR', { year: 'numeric', month: 'long', day: 'numeric' });
+      const dateFmt = new Intl.DateTimeFormat(T() === 'en' ? 'en-US' : 'es-CR', { year: 'numeric', month: 'long', day: 'numeric' });
 
       listEl.innerHTML = filtered.map(post => {
         const dateStr = post.published_at ? dateFmt.format(new Date(post.published_at)) : '';
@@ -483,7 +510,7 @@
             </div>
             <h3>${escapeHtml(post.title)}</h3>
             <p class="post-excerpt">${escapeHtml(post.excerpt || '')}</p>
-            ${authorName ? `<p class="post-author">Por ${escapeHtml(authorName)}</p>` : ''}
+            ${authorName ? `<p class="post-author">${t('byAuthorPrefix')} ${escapeHtml(authorName)}</p>` : ''}
           </a>
         `;
       }).join('');
@@ -495,7 +522,7 @@
       renderFilters();
 
       if (!GHOST_KEY || GHOST_KEY.startsWith('PASTE_')) {
-        listEl.innerHTML = '<p class="empty-state">Falta configurar la API key de Ghost.</p>';
+        listEl.innerHTML = `<p class="empty-state">${t('stateNoApiKey')}</p>`;
         return;
       }
 
@@ -509,7 +536,7 @@
 
         renderPosts();
       } catch (err) {
-        listEl.innerHTML = '<p class="empty-state">No se pudieron cargar las entradas. Intenta de nuevo más tarde.</p>';
+        listEl.innerHTML = `<p class="empty-state">${t('stateLoadError')}</p>`;
         console.error('Ghost fetch error:', err);
       }
     }
@@ -521,7 +548,72 @@
     }
 
     loadPosts();
+
+    // Re-render dynamic content (filters, cards) in the new language without re-fetching
+    window.addEventListener('languagechange', () => {
+      if (allPosts.length > 0 || document.getElementById('cat-filters').innerHTML.trim() !== '') {
+        renderFilters();
+        renderPosts();
+      }
+    });
   </script>
 
+
+  <script>
+    window.I18N = {
+      navExtras: { es: "Extras", en: "Extras" },
+      navStack: { es: "Stack", en: "Stack" },
+      navBlog: { es: "Blog", en: "Blog" },
+      navAppearance: { es: "Apariencia", en: "Appearance" },
+      blogHeroTitle: { es: "Últimas entradas", en: "Latest posts" },
+      blogHeroTagline: { es: "Notas sobre homelab, privacidad y lo que ande trasteando.", en: "Notes on homelab, privacy, and whatever I'm tinkering with." },
+      filterAll: { es: "Todas", en: "All" },
+      byAuthorPrefix: { es: "Por", en: "By" },
+      stateLoadingPosts: { es: "Cargando entradas...", en: "Loading posts..." },
+      stateNoPostsYet: { es: "Aún no hay entradas publicadas.", en: "No posts published yet." },
+      stateNoPostsInCategory: { es: "No hay entradas en esta categoría todavía.", en: "No posts in this category yet." },
+      stateNoApiKey: { es: "Falta configurar la API key de Ghost.", en: "Ghost API key not configured." },
+      stateLoadError: { es: "No se pudieron cargar las entradas. Intenta de nuevo más tarde.", en: "Couldn't load posts. Try again later." },
+      footerLicense: { es: "Código abierto bajo licencia Apache", en: "Open source under the Apache license" },
+      footerPrivacy: { es: "Política de Datos", en: "Privacy Policy" }
+    };
+  </script>
+  <script>
+    (() => {
+      const LANG_KEY = 'site-language';
+      function getLang(){ return localStorage.getItem(LANG_KEY) || 'es'; }
+
+      function applyLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (window.I18N && window.I18N[key] && window.I18N[key][lang] !== undefined) {
+            el.textContent = window.I18N[key][lang];
+          }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (window.I18N && window.I18N[key] && window.I18N[key][lang] !== undefined) {
+            el.setAttribute('placeholder', window.I18N[key][lang]);
+          }
+        });
+        document.querySelectorAll('.lang-toggle').forEach(btn => {
+          btn.textContent = lang === 'es' ? 'EN' : 'ES';
+        });
+        window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));
+      }
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.lang-toggle');
+        if (!btn) return;
+        const next = getLang() === 'es' ? 'en' : 'es';
+        localStorage.setItem(LANG_KEY, next);
+        applyLanguage(next);
+      });
+
+      window.getSiteLang = getLang;
+      applyLanguage(getLang());
+    })();
+  </script>
 </body>
 </html>

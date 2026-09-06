@@ -275,12 +275,21 @@
     html{ scroll-behavior:auto; }
     .card,body{ transition:none; }
   }
+
+  .lang-toggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:34px; height:28px; padding:0 8px;
+    border:1px solid var(--vp-c-divider); border-radius:14px;
+    background:var(--vp-c-bg-soft); color:var(--vp-c-text-2);
+    font-size:0.72rem; font-weight:700; letter-spacing:.02em;
+    cursor:pointer; margin-left:8px;
+  }
+  .lang-toggle:hover{ border-color:var(--vp-c-brand-1); color:var(--vp-c-text-1); }
 </style>
 </head>
 
 <body>
-
-<div id="app">
+  <div id="app">
     <div class="Layout" data-v-e5b1bae6>
       <span tabindex="-1" data-v-d0347f49></span>
       <a href="#VPContent" class="VPSkipLink visually-hidden" data-v-d0347f49>Skip to content</a>
@@ -303,7 +312,7 @@
                     <div class="VPFlyout VPNavBarMenuGroup" data-v-03607a70 data-v-73878474>
                       <button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-73878474>
                         <span class="text" data-v-73878474>
-                          <span data-v-73878474>Extras</span>
+                          <span data-v-73878474 data-i18n="navExtras">Extras</span>
                           <span class="vpi-chevron-down text-icon" data-v-73878474></span>
                         </span>
                       </button>
@@ -312,12 +321,12 @@
                           <div class="items" data-v-344e410b>
                             <div class="VPMenuLink" data-v-344e410b data-v-9b63c25a>
                               <a class="VPLink link" href="pc.html" data-v-9b63c25a>
-                                <span data-v-9b63c25a>Stack</span>
+                                <span data-v-9b63c25a data-i18n="navStack">Stack</span>
                               </a>
                             </div>
                             <div class="VPMenuLink" data-v-344e410b data-v-9b63c25a>
                               <a class="VPLink link" href="blog.html" data-v-9b63c25a>
-                                <span data-v-9b63c25a>Blog</span>
+                                <span data-v-9b63c25a data-i18n="navBlog">Blog</span>
                               </a>
                             </div>
                           </div>
@@ -327,6 +336,7 @@
                   </nav>
                   <div class="VPNavBarAppearance appearance" data-v-cea3f7fa data-v-83a70e2f>
                     <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                    <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
                   </div>
                   <div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-cea3f7fa data-v-0a16a001 data-v-a24f9f74>
                     <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
@@ -343,9 +353,10 @@
                       <div class="VPMenu" data-v-73878474 data-v-344e410b>
                         <div class="group" data-v-d5af21fa>
                           <div class="item appearance" data-v-d5af21fa>
-                            <p class="label" data-v-d5af21fa>Apariencia</p>
+                            <p class="label" data-v-d5af21fa data-i18n="navAppearance">Apariencia</p>
                             <div class="appearance-action" data-v-d5af21fa>
                               <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                              <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
                             </div>
                           </div>
                         </div>
@@ -383,19 +394,22 @@
           <div class="menu" data-v-2860b3da>
             <div class="VPNavScreenMenuGroup" data-v-705739bc>
               <button class="button" data-v-705739bc>
-                <span data-v-705739bc>Extras</span>
+                <span data-v-705739bc data-i18n="navExtras">Extras</span>
                 <span class="vpi-plus button-icon" data-v-705739bc></span>
               </button>
               <div class="items" data-v-705739bc>
-                <a class="VPNavScreenMenuLink" href="pc.html" data-v-c0efecf9>Stack</a>
-                <a class="VPNavScreenMenuLink" href="blog.html" data-v-c0efecf9>Blog</a>
+                <a class="VPNavScreenMenuLink" href="pc.html" data-v-c0efecf9 data-i18n="navStack">Stack</a>
+                <a class="VPNavScreenMenuLink" href="blog.html" data-v-c0efecf9 data-i18n="navBlog">Blog</a>
               </div>
             </div>
           </div>
           <div class="appearance" data-v-2860b3da>
             <div class="VPNavScreenAppearance" data-v-19b7c1b5>
-              <p class="text" data-v-19b7c1b5>Apariencia</p>
-              <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+              <p class="text" data-v-19b7c1b5 data-i18n="navAppearance">Apariencia</p>
+              <div style="display:flex;align-items:center;">
+                <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
+              </div>
             </div>
           </div>
           <div class="social-links" data-v-2860b3da>
@@ -409,12 +423,11 @@
           </div>
         </div>
       </div>
-
 <section class="hero">
 
-  <p class="name">Vida Personal</p>
+  <p class="name" data-i18n="actionPersonalLife">Vida Personal</p>
   <h1>Eduardo Calderón Mora</h1>
-  <p class="tagline">Una línea de tiempo de mi formación académica y trayectoria profesional como Ingeniero en Sistemas de Computación.</p>
+  <p class="tagline" data-i18n="cvTagline">Una línea de tiempo de mi formación académica y trayectoria profesional como Ingeniero en Sistemas de Computación.</p>
 </section>
 
 <div class="timeline-wrap">
@@ -426,11 +439,11 @@
     <div class="entry">
       <span class="date">3 de Octubre del 2003</span>
       <div class="card">
-        <h3>Nacimiento</h3>
+        <h3 data-i18n="cvT_birth">Nacimiento</h3>
         <p class="role">Hospital Calderón Guardia</p>
-        <p class="desc">Según lo documentado por el doctor al momento de mi nacimiento, yo nací a las 5:55 PM del día viernes. De acuerdo al calendario mi signo zodiacal sería Libra siendo esto inspiración para el nombre del servidor.</p>
+        <p class="desc" data-i18n="cvD_birth">Según lo documentado por el doctor al momento de mi nacimiento, yo nací a las 5:55 PM del día viernes. De acuerdo al calendario mi signo zodiacal sería Libra siendo esto inspiración para el nombre del servidor.</p>
         <div class="tags">
-          <span class="tag">Personal</span>
+          <span class="tag" data-i18n="tagPersonal">Personal</span>
         </div>
       </div>
     </div>
@@ -438,13 +451,13 @@
     <div class="entry right">
       <span class="date">2006 — 2009</span>
       <div class="card">
-        <h3>Educación Preescolar</h3>
+        <h3 data-i18n="cvT_preschool">Educación Preescolar</h3>
         <p class="role">Saint Joseph School</p>
-        <p class="desc">Sin mucho que explicar, en esta fecha termine el ciclo de transición de la educación preescolar.</p>
+        <p class="desc" data-i18n="cvD_preschool">Sin mucho que explicar, en esta fecha termine el ciclo de transición de la educación preescolar.</p>
         <div class="tags">
-          <span class="tag">Profesional</span>
-		  <span class="tag">Preescolar</span>
-		  <span class="tag">Académico</span>
+          <span class="tag" data-i18n="tagProfessional">Profesional</span>
+		  <span class="tag" data-i18n="tagPreschool">Preescolar</span>
+		  <span class="tag" data-i18n="tagAcademic">Académico</span>
         </div>
       </div>
     </div>
@@ -452,13 +465,13 @@
     <div class="entry">
       <span class="date">2010 — 2015</span>
       <div class="card">
-        <h3>Educación Primaria</h3>
+        <h3 data-i18n="cvT_primary">Educación Primaria</h3>
         <p class="role">Saint Joseph School</p>
-        <p class="desc">Finalice mi educación primaria recibiendo el título por el cumplimiento de los estudios del segundo ciclo de la educación general básica.</p>
+        <p class="desc" data-i18n="cvD_primary">Finalice mi educación primaria recibiendo el título por el cumplimiento de los estudios del segundo ciclo de la educación general básica.</p>
         <div class="tags">
-          <span class="tag">Profesional</span>
-          <span class="tag">Escuela</span>
-		  <span class="tag">Académico</span>
+          <span class="tag" data-i18n="tagProfessional">Profesional</span>
+          <span class="tag" data-i18n="tagSchool">Escuela</span>
+		  <span class="tag" data-i18n="tagAcademic">Académico</span>
         </div>
       </div>
     </div>
@@ -466,13 +479,13 @@
     <div class="entry right">
       <span class="date">2016 — 2018</span>
       <div class="card">
-        <h3>Certificado de Noveno Año</h3>
+        <h3 data-i18n="cvT_ninth">Certificado de Noveno Año</h3>
         <p class="role">Saint Joseph High School</p>
-        <p class="desc">En el 2019 recibo oficialmente el título de conclusión de mis estudios de educación general básica.</p>
+        <p class="desc" data-i18n="cvD_ninth">En el 2019 recibo oficialmente el título de conclusión de mis estudios de educación general básica.</p>
         <div class="tags">
-          <span class="tag">Profesional</span>
-		  <span class="tag">Colegio</span>
-		  <span class="tag">Académico</span>
+          <span class="tag" data-i18n="tagProfessional">Profesional</span>
+		  <span class="tag" data-i18n="tagHighSchool">Colegio</span>
+		  <span class="tag" data-i18n="tagAcademic">Académico</span>
         </div>
       </div>
     </div>
@@ -480,80 +493,76 @@
 	<div class="entry">
       <span class="date">2019 — 2020</span>
       <div class="card">
-        <h3>Bachillerato</h3>
+        <h3 data-i18n="cvT_bachillerato">Bachillerato</h3>
         <p class="role">Saint Joseph High School</p>
-        <p class="desc">En el auge de la pandemia de COVID-19 recibí mi título de conclusión de mis estudios de educación general media.</p>
+        <p class="desc" data-i18n="cvD_bachillerato">En el auge de la pandemia de COVID-19 recibí mi título de conclusión de mis estudios de educación general media.</p>
         <div class="tags">
-          <span class="tag">Profesional</span>
-		  <span class="tag">Colegio</span>
-		  <span class="tag">Académico</span>
+          <span class="tag" data-i18n="tagProfessional">Profesional</span>
+		  <span class="tag" data-i18n="tagHighSchool">Colegio</span>
+		  <span class="tag" data-i18n="tagAcademic">Académico</span>
 		</div>
 		&nbsp
 	  <div class="card">
-        <h3>MATEM</h3>
+        <h3 data-i18n="cvT_matem">MATEM</h3>
         <p class="role">Universidad de Costa Rica</p>
-        <p class="desc">En mi último año de colegio me inscribí al curso de MA0125 de la Universidad de Costa Rica en el cual aprobé con una nota de 7,5/10.</p>
+        <p class="desc" data-i18n="cvD_matem">En mi último año de colegio me inscribí al curso de MA0125 de la Universidad de Costa Rica en el cual aprobé con una nota de 7,5/10.</p>
       </div>
 	  &nbsp
 	  <div class="card">
-        <h3>TOEIC</h3>
+        <h3 data-i18n="cvT_toeic">TOEIC</h3>
         <p class="role">Educational Testing Service</p>
-        <p class="desc">Este mismo año, como requisito para la graduación de bachillerato realice el examen TOEIC en el cual obtuve los puntajes de C1 en Reading/Listening y C2 en Speaking.</p>
+        <p class="desc" data-i18n="cvD_toeic">Este mismo año, como requisito para la graduación de bachillerato realice el examen TOEIC en el cual obtuve los puntajes de C1 en Reading/Listening y C2 en Speaking.</p>
       </div>
     </div>
     </div>
 	<div class="entry right">
       <span class="date">2021 — 2025</span>
       <div class="card">
-        <h3>Ingeniería en Sistema de Computación</h3>
+        <h3 data-i18n="cvT_ing">Ingeniería en Sistema de Computación</h3>
         <p class="role">Universidad Fidélitas</p>
-        <p class="desc">Debido a mi gusto e interés por la tecnología decidí convertirme en profesional del área de computación. Durante cuatro años estudié la carrera universitaria de Ingeniería en Sistema de Computación. A lo largo de mi tiempo estudiando pude de igual manera obtener experiencia laboral en el área.</p>
+        <p class="desc" data-i18n="cvD_ing">Debido a mi gusto e interés por la tecnología decidí convertirme en profesional del área de computación. Durante cuatro años estudié la carrera universitaria de Ingeniería en Sistema de Computación. A lo largo de mi tiempo estudiando pude de igual manera obtener experiencia laboral en el área.</p>
         <div class="tags">
-          <span class="tag">Profesional</span>
-		  <span class="tag">Universidad</span>
-		  <span class="tag">Académico</span>
-		  <span class="tag">Laboral</span>
+          <span class="tag" data-i18n="tagProfessional">Profesional</span>
+		  <span class="tag" data-i18n="tagUniversity">Universidad</span>
+		  <span class="tag" data-i18n="tagAcademic">Académico</span>
+		  <span class="tag" data-i18n="tagWork">Laboral</span>
         </div>
 		&nbsp
 	  <div class="card">
-        <h3>TCU</h3>
+        <h3 data-i18n="cvT_tcu">TCU</h3>
         <p class="role">Red de Cuido Obras de Jesus</p>
-        <p class="desc">Como requisito de graduación de bachillerato de la carrera me encargue de ayudar a una institución de ayuda social. 
-			Durante el proceso mis labores fueron tres principales: <br>
-			1. La primera fue la elaboración del laboratorio tecnológico a usar. Para esto instale el sistema operativo, obtuve los programas solicitados y configure las computadoras. <br>
-			2. Como segunda labor se desarrolló un programa de aprendizaje para los niños y jóvenes que atienden la institución. Este programa permitió a los encargados crear diferentes preguntas de diferentes áreas de aprendizaje y a los niños y jóvenes competir por obtener un mejor puntaje mediante respuestas correctas a las preguntas. Esto también permitía a los encargados obtener datos de rendimiento de los estudiantes.<br>
-			3. Por último, se inició un servidor centralizado en la organización para que los encargados pudieran tener varios servicios 24/7 como un servicio de almacenamiento conectado a la red (NAS).</p>
+        <p class="desc" data-i18n="cvD_tcu">Como requisito de graduación de bachillerato de la carrera me encargue de ayudar a una institución de ayuda social. Durante el proceso mis labores fueron tres principales: 1. La primera fue la elaboración del laboratorio tecnológico a usar. Para esto instale el sistema operativo, obtuve los programas solicitados y configure las computadoras. 2. Como segunda labor se desarrolló un programa de aprendizaje para los niños y jóvenes que atienden la institución. Este programa permitió a los encargados crear diferentes preguntas de diferentes áreas de aprendizaje y a los niños y jóvenes competir por obtener un mejor puntaje mediante respuestas correctas a las preguntas. Esto también permitía a los encargados obtener datos de rendimiento de los estudiantes. 3. Por último, se inició un servidor centralizado en la organización para que los encargados pudieran tener varios servicios 24/7 como un servicio de almacenamiento conectado a la red (NAS).</p>
       </div>
 	  &nbsp
 	  <div class="card">
         <h3>CCNAv7: Switching, Routing, and Wireless Essentials</h3>
         <p class="role">Cisco Networking Academy</p>
-        <p class="desc">Durante mis estudios universitarios y para el cumplimiento de cursos de redes, me inscribí al programa de CCNA de, en su momento, Netacad. Este lo completé de manera satisfactoria el 22 de septiembre del 2022.</p>
+        <p class="desc" data-i18n="cvD_ccna">Durante mis estudios universitarios y para el cumplimiento de cursos de redes, me inscribí al programa de CCNA de, en su momento, Netacad. Este lo completé de manera satisfactoria el 22 de septiembre del 2022.</p>
       </div>
 	  &nbsp
 	  <div class="card">
         <h3>Scrum Fundamentals</h3>
         <p class="role">VMEdu</p>
-        <p class="desc">Durante mis estudios universitarios y para el cumplimiento de cursos de administración de sistemas me inscribí a un programa donde se me enseño los fundamentos de la metodología Scrum para el desarrollo de software.</p>
+        <p class="desc" data-i18n="cvD_scrum">Durante mis estudios universitarios y para el cumplimiento de cursos de administración de sistemas me inscribí a un programa donde se me enseño los fundamentos de la metodología Scrum para el desarrollo de software.</p>
       </div>
 	  &nbsp
 	  <div class="card">
-        <h3>Proyecto de Graduacion de Bachillerato</h3>
+        <h3 data-i18n="cvT_proyecto">Proyecto de Graduacion de Bachillerato</h3>
         <p class="role">Molino Central de Coronado</p>
-        <p class="desc">Como requisito de graduación de bachillerato de la carrera me encargue de desarrollar en grupo un sistema de Punto de Venta (PoS) para el restaurante del Molino Central de Coronado. El programa incluía funciones de Punto de Venta, Facturación, Gestión de Empleados e Inventario. Para la lista completa de funciones y código visitar la página del proyecto: <a href="https://github.com/Educal72/Proyecto-de-Graduaci-n-Grupo-9">GitHub</a> </p>
+        <p class="desc"><span data-i18n="cvD_proyecto">Como requisito de graduación de bachillerato de la carrera me encargue de desarrollar en grupo un sistema de Punto de Venta (PoS) para el restaurante del Molino Central de Coronado. El programa incluía funciones de Punto de Venta, Facturación, Gestión de Empleados e Inventario. Para la lista completa de funciones y código visitar la página del proyecto:</span> <a href="https://github.com/Educal72/Proyecto-de-Graduaci-n-Grupo-9">GitHub</a> </p>
       </div>
       </div>
       </div>
 	  <div class="entry">
       <span class="date">2025 — Actualmente</span>
       <div class="card">
-        <h3>Licenciatura en Ingeniería en Sistema de Computación</h3>
+        <h3 data-i18n="cvT_lic">Licenciatura en Ingeniería en Sistema de Computación</h3>
         <p class="role">Universidad Fidélitas</p>
-        <p class="desc">Una vez terminado el grado de bachillerato seguí con mis estudios con el objetivo de obtener el grado de Licenciatura.</p>
+        <p class="desc" data-i18n="cvD_lic">Una vez terminado el grado de bachillerato seguí con mis estudios con el objetivo de obtener el grado de Licenciatura.</p>
         <div class="tags">
-          <span class="tag">Profesional</span>
-		  <span class="tag">Universidad</span>
-		  <span class="tag">Académico</span>
+          <span class="tag" data-i18n="tagProfessional">Profesional</span>
+		  <span class="tag" data-i18n="tagUniversity">Universidad</span>
+		  <span class="tag" data-i18n="tagAcademic">Académico</span>
         </div>
       </div>
     </div>
@@ -563,9 +572,9 @@
 
 <footer class="VPFooter">
   <p class="message">
-    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Código abierto bajo licencia Apache</a>
+    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" data-i18n="footerLicense">Código abierto bajo licencia Apache</a>
     <span class="divider">|</span>
-    <a href="/privacy.html">Política de Datos</a>
+    <a href="/privacy.html" data-i18n="footerPrivacy">Política de Datos</a>
   </p>
   <p class="copyright">Copyright © 2026 Libra Server</p>
 </footer>
@@ -653,5 +662,87 @@ darkModeBtns.forEach(btn => {
     }
   </script>
 
+
+<script>
+  window.I18N = {
+    navExtras: { es: "Extras", en: "Extras" },
+    navStack: { es: "Stack", en: "Stack" },
+    navBlog: { es: "Blog", en: "Blog" },
+    navAppearance: { es: "Apariencia", en: "Appearance" },
+    actionPersonalLife: { es: "Vida Personal", en: "Personal Life" },
+    cvTagline: { es: "Una línea de tiempo de mi formación académica y trayectoria profesional como Ingeniero en Sistemas de Computación.", en: "A timeline of my academic background and professional path as a Computer Systems Engineer." },
+    tagProfessional: { es: "Profesional", en: "Professional" },
+    tagPersonal: { es: "Personal", en: "Personal" },
+    tagSchool: { es: "Escuela", en: "Elementary School" },
+    tagAcademic: { es: "Académico", en: "Academic" },
+    tagPreschool: { es: "Preescolar", en: "Preschool" },
+    tagHighSchool: { es: "Colegio", en: "High School" },
+    tagUniversity: { es: "Universidad", en: "University" },
+    tagWork: { es: "Laboral", en: "Work" },
+    cvT_birth: { es: "Nacimiento", en: "Birth" },
+    cvD_birth: { es: "Según lo documentado por el doctor al momento de mi nacimiento, yo nací a las 5:55 PM del día viernes. De acuerdo al calendario mi signo zodiacal sería Libra siendo esto inspiración para el nombre del servidor.", en: "According to the doctor's records at the time of my birth, I was born at 5:55 PM on a Friday. Per the calendar, my zodiac sign is Libra, which inspired the server's name." },
+    cvT_preschool: { es: "Educación Preescolar", en: "Preschool Education" },
+    cvD_preschool: { es: "Sin mucho que explicar, en esta fecha termine el ciclo de transición de la educación preescolar.", en: "Not much to explain here — this is when I finished the preschool transition cycle." },
+    cvT_primary: { es: "Educación Primaria", en: "Elementary Education" },
+    cvD_primary: { es: "Finalice mi educación primaria recibiendo el título por el cumplimiento de los estudios del segundo ciclo de la educación general básica.", en: "I completed elementary school, receiving my diploma for finishing the second cycle of basic general education." },
+    cvT_ninth: { es: "Certificado de Noveno Año", en: "Ninth Grade Certificate" },
+    cvD_ninth: { es: "En el 2019 recibo oficialmente el título de conclusión de mis estudios de educación general básica.", en: "In 2019 I officially received my diploma for completing basic general education." },
+    cvT_bachillerato: { es: "Bachillerato", en: "High School Diploma" },
+    cvD_bachillerato: { es: "En el auge de la pandemia de COVID-19 recibí mi título de conclusión de mis estudios de educación general media.", en: "At the height of the COVID-19 pandemic, I received my diploma for completing secondary education." },
+    cvT_matem: { es: "MATEM", en: "MATEM" },
+    cvD_matem: { es: "En mi último año de colegio me inscribí al curso de MA0125 de la Universidad de Costa Rica en el cual aprobé con una nota de 7,5/10.", en: "In my last year of high school, I enrolled in course MA0125 at the University of Costa Rica, which I passed with a grade of 7.5/10." },
+    cvT_toeic: { es: "TOEIC", en: "TOEIC" },
+    cvD_toeic: { es: "Este mismo año, como requisito para la graduación de bachillerato realice el examen TOEIC en el cual obtuve los puntajes de C1 en Reading/Listening y C2 en Speaking.", en: "That same year, as a graduation requirement, I took the TOEIC exam and scored C1 in Reading/Listening and C2 in Speaking." },
+    cvT_ing: { es: "Ingeniería en Sistema de Computación", en: "Computer Systems Engineering" },
+    cvD_ing: { es: "Debido a mi gusto e interés por la tecnología decidí convertirme en profesional del área de computación. Durante cuatro años estudié la carrera universitaria de Ingeniería en Sistema de Computación. A lo largo de mi tiempo estudiando pude de igual manera obtener experiencia laboral en el área.", en: "Because of my interest in technology, I decided to become a computing professional. Over four years I studied Computer Systems Engineering, and throughout that time I was also able to gain work experience in the field." },
+    cvT_tcu: { es: "TCU", en: "Community Service Program (TCU)" },
+    cvD_tcu: { es: "Como requisito de graduación de bachillerato de la carrera me encargue de ayudar a una institución de ayuda social. Durante el proceso mis labores fueron tres principales: 1. La primera fue la elaboración del laboratorio tecnológico a usar. Para esto instale el sistema operativo, obtuve los programas solicitados y configure las computadoras. 2. Como segunda labor se desarrolló un programa de aprendizaje para los niños y jóvenes que atienden la institución. Este programa permitió a los encargados crear diferentes preguntas de diferentes áreas de aprendizaje y a los niños y jóvenes competir por obtener un mejor puntaje mediante respuestas correctas a las preguntas. Esto también permitía a los encargados obtener datos de rendimiento de los estudiantes. 3. Por último, se inició un servidor centralizado en la organización para que los encargados pudieran tener varios servicios 24/7 como un servicio de almacenamiento conectado a la red (NAS).", en: "As a graduation requirement, I helped a social assistance institution. My work there had three main parts: 1. Setting up the technology lab to be used — installing the OS, getting the required programs, and configuring the computers. 2. Developing a learning program for the children and youth served by the institution, letting staff create questions across different learning areas so kids could compete for higher scores by answering correctly, while also giving staff performance data on the students. 3. Finally, setting up a centralized server for the organization so staff could run several 24/7 services, including network-attached storage (NAS)." },
+    cvD_ccna: { es: "Durante mis estudios universitarios y para el cumplimiento de cursos de redes, me inscribí al programa de CCNA de, en su momento, Netacad. Este lo completé de manera satisfactoria el 22 de septiembre del 2022.", en: "During my university studies, as part of my networking coursework, I enrolled in the CCNA program through what was then Netacad. I completed it successfully on September 22, 2022." },
+    cvD_scrum: { es: "Durante mis estudios universitarios y para el cumplimiento de cursos de administración de sistemas me inscribí a un programa donde se me enseño los fundamentos de la metodología Scrum para el desarrollo de software.", en: "During my university studies, as part of my systems administration coursework, I enrolled in a program covering the fundamentals of the Scrum methodology for software development." },
+    cvT_proyecto: { es: "Proyecto de Graduacion de Bachillerato", en: "Bachelor's Graduation Project" },
+    cvD_proyecto: { es: "Como requisito de graduación de bachillerato de la carrera me encargue de desarrollar en grupo un sistema de Punto de Venta (PoS) para el restaurante del Molino Central de Coronado. El programa incluía funciones de Punto de Venta, Facturación, Gestión de Empleados e Inventario. Para la lista completa de funciones y código visitar la página del proyecto:", en: "As a graduation requirement, I worked in a group to develop a Point of Sale (PoS) system for the Molino Central de Coronado restaurant. The program included Point of Sale, Billing, Employee Management, and Inventory features. For the full feature list and code, visit the project page:" },
+    cvT_lic: { es: "Licenciatura en Ingeniería en Sistema de Computación", en: "Bachelor's Degree in Computer Systems Engineering" },
+    cvD_lic: { es: "Una vez terminado el grado de bachillerato seguí con mis estudios con el objetivo de obtener el grado de Licenciatura.", en: "After finishing my bachelor's degree, I continued my studies with the goal of earning my Licenciatura." },
+    footerLicense: { es: "Código abierto bajo licencia Apache", en: "Open source under the Apache license" },
+    footerPrivacy: { es: "Política de Datos", en: "Privacy Policy" }
+  };
+</script>
+  <script>
+    (() => {
+      const LANG_KEY = 'site-language';
+      function getLang(){ return localStorage.getItem(LANG_KEY) || 'es'; }
+
+      function applyLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (window.I18N && window.I18N[key] && window.I18N[key][lang] !== undefined) {
+            el.textContent = window.I18N[key][lang];
+          }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (window.I18N && window.I18N[key] && window.I18N[key][lang] !== undefined) {
+            el.setAttribute('placeholder', window.I18N[key][lang]);
+          }
+        });
+        document.querySelectorAll('.lang-toggle').forEach(btn => {
+          btn.textContent = lang === 'es' ? 'EN' : 'ES';
+        });
+        window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));
+      }
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.lang-toggle');
+        if (!btn) return;
+        const next = getLang() === 'es' ? 'en' : 'es';
+        localStorage.setItem(LANG_KEY, next);
+        applyLanguage(next);
+      });
+
+      window.getSiteLang = getLang;
+      applyLanguage(getLang());
+    })();
+  </script>
 </body>
 </html>
