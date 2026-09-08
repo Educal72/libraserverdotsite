@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <title id="page-title">Entrada | Libra</title>
@@ -9,120 +10,176 @@
   <meta name="theme-color" content="#0058A0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/images/1024-1130-modified.png">
-  <script>(()=>{const e=localStorage.getItem("vitepress-theme-appearance");(e!=="light")&&document.documentElement.classList.add("dark")})();</script>
+  <script>(() => { const e = localStorage.getItem("vitepress-theme-appearance"); (e !== "light") && document.documentElement.classList.add("dark") })();</script>
 
   <style>
-    :root, html.dark{ --vp-nav-bg-color: var(--vp-c-bg); }
-
-    .vp-doc.setup-page{ max-width:760px; margin:0 auto; padding:96px 24px 100px; flex-grow:1; width:100%; }
-
-    .Layout{ display:flex; flex-direction:column; min-height:100vh; }
-
-    footer.VPFooter{
-      border-top:1px solid var(--vp-c-divider);
-      padding:28px 24px 36px;
-      text-align:center;
-      color:var(--vp-c-text-2);
-      font-size:0.85rem;
-    }
-    footer.VPFooter a{ color:var(--vp-c-text-2); text-decoration:underline; text-underline-offset:2px; }
-    footer.VPFooter a:hover{ color:var(--vp-c-brand-1); }
-    footer.VPFooter .divider{ margin:0 8px; }
-    footer.VPFooter .copyright{ margin-top:6px; }
-
-    .back-link{
-      position:relative;
-      z-index:1;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      color:var(--vp-c-text-2);
-      font-size:0.88rem;
-      text-decoration:none;
-      margin-bottom:28px;
-    }
-    .back-link:hover{ color:var(--vp-c-brand-1); }
-
-    .post-date{
-      color:var(--vp-c-brand-1);
-      font-size:0.82rem;
-      font-weight:600;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      margin:0 0 12px;
-    }
-    .post-meta-row{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:0 0 12px;
-    }
-    .post-tag-badge{
-      color:var(--vp-c-brand-1);
-      font-size:0.78rem;
-      font-weight:600;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      background:var(--vp-c-bg-mute, rgba(0,88,160,0.1));
-      border-radius:4px;
-      padding:2px 8px;
-    }
-    .post-author{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin:12px 0 24px;
-    }
-    .post-author img{
-      width:36px;
-      height:36px;
-      border-radius:50%;
-      object-fit:cover;
-      flex-shrink:0;
-    }
-    .post-author .author-info{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-    .post-author .author-name{
-      color:var(--vp-c-text-1);
-      font-size:0.9rem;
-      font-weight:600;
-    }
-    .post-author .author-contact{
-      color:var(--vp-c-text-2);
-      font-size:0.8rem;
-    }
-    .post-author .author-contact a{
-      color:var(--vp-c-text-2);
-      text-decoration:underline;
-      text-underline-offset:2px;
-    }
-    .post-author .author-contact a:hover{ color:var(--vp-c-brand-1); }
-    .post-feature-img{
-      width:100%;
-      border-radius:12px;
-      margin:24px 0;
-      display:block;
-    }
-    .empty-state{
-      text-align:center;
-      color:var(--vp-c-text-2);
-      padding:60px 20px;
-      font-size:0.95rem;
+    :root,
+    html.dark {
+      --vp-nav-bg-color: var(--vp-c-bg);
     }
 
-    .lang-toggle{
-      display:inline-flex; align-items:center; justify-content:center;
-      min-width:34px; height:28px; padding:0 8px;
-      border:1px solid var(--vp-c-divider); border-radius:14px;
-      background:var(--vp-c-bg-soft); color:var(--vp-c-text-2);
-      font-size:0.72rem; font-weight:700; letter-spacing:.02em;
-      cursor:pointer; margin-left:8px;
+    .vp-doc.setup-page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 96px 24px 100px;
+      flex-grow: 1;
+      width: 100%;
     }
-    .lang-toggle:hover{ border-color:var(--vp-c-brand-1); color:var(--vp-c-text-1); }
+
+    .Layout {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    footer.VPFooter {
+      border-top: 1px solid var(--vp-c-divider);
+      padding: 28px 24px 36px;
+      text-align: center;
+      color: var(--vp-c-text-2);
+      font-size: 0.85rem;
+    }
+
+    footer.VPFooter a {
+      color: var(--vp-c-text-2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    footer.VPFooter a:hover {
+      color: var(--vp-c-brand-1);
+    }
+
+    footer.VPFooter .divider {
+      margin: 0 8px;
+    }
+
+    footer.VPFooter .copyright {
+      margin-top: 6px;
+    }
+
+    .back-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--vp-c-text-2);
+      font-size: 0.88rem;
+      text-decoration: none;
+      margin-bottom: 28px;
+    }
+
+    .back-link:hover {
+      color: var(--vp-c-brand-1);
+    }
+
+    .post-date {
+      color: var(--vp-c-brand-1);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    .post-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 0 0 12px;
+    }
+
+    .post-tag-badge {
+      color: var(--vp-c-brand-1);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      background: var(--vp-c-bg-mute, rgba(0, 88, 160, 0.1));
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+
+    .post-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 0 24px;
+    }
+
+    .post-author img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .post-author .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .post-author .author-name {
+      color: var(--vp-c-text-1);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .post-author .author-contact {
+      color: var(--vp-c-text-2);
+      font-size: 0.8rem;
+    }
+
+    .post-author .author-contact a {
+      color: var(--vp-c-text-2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .post-author .author-contact a:hover {
+      color: var(--vp-c-brand-1);
+    }
+
+    .post-feature-img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 24px 0;
+      display: block;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: var(--vp-c-text-2);
+      padding: 60px 20px;
+      font-size: 0.95rem;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 28px;
+      padding: 0 8px;
+      border: 1px solid var(--vp-c-divider);
+      border-radius: 14px;
+      background: var(--vp-c-bg-soft);
+      color: var(--vp-c-text-2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      cursor: pointer;
+      margin-left: 8px;
+    }
+
+    .lang-toggle:hover {
+      border-color: var(--vp-c-brand-1);
+      color: var(--vp-c-text-1);
+    }
   </style>
 </head>
 
@@ -138,7 +195,8 @@
               <div class="title" data-v-cea3f7fa>
                 <div class="VPNavBarTitle" data-v-cea3f7fa data-v-e47b4765>
                   <a class="title" href="/" data-v-e47b4765>
-                    <img class="VPImage logo" src="/images/1024-1130-modified.png" width="24" height="24" alt data-v-71129202>
+                    <img class="VPImage logo" src="/images/1024-1130-modified.png" width="24" height="24" alt
+                      data-v-71129202>
                     <span data-v-e47b4765>Libra</span>
                   </a>
                 </div>
@@ -173,18 +231,35 @@
                     </div>
                   </nav>
                   <div class="VPNavBarAppearance appearance" data-v-cea3f7fa data-v-83a70e2f>
-                    <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                    <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance"
+                      aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95=""
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24"
+                        class="moon">
+                        <path
+                          d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z">
+                        </path>
+                      </svg></button>
                     <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
                   </div>
-                  <div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-cea3f7fa data-v-0a16a001 data-v-a24f9f74>
-                    <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
-                    <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US" aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-linkedin"></span></a>
-                    <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/" aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                  <div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-cea3f7fa data-v-0a16a001
+                    data-v-a24f9f74>
+                    <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub"
+                      target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span
+                        class="vpi-social-github"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US"
+                      aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span
+                        class="vpi-social-linkedin"></span></a>
+                    <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/"
+                      aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
+                      </svg>
                     </a>
                   </div>
                   <div class="VPFlyout VPNavBarExtra extra" data-v-cea3f7fa data-v-d5af21fa data-v-73878474>
-                    <button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-73878474>
+                    <button type="button" class="button" aria-haspopup="true" aria-expanded="false"
+                      aria-label="extra navigation" data-v-73878474>
                       <span class="vpi-more-horizontal icon" data-v-73878474></span>
                     </button>
                     <div class="menu" data-v-73878474>
@@ -193,7 +268,14 @@
                           <div class="item appearance" data-v-d5af21fa>
                             <p class="label" data-v-d5af21fa data-i18n="navAppearance">Apariencia</p>
                             <div class="appearance-action" data-v-d5af21fa>
-                              <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                              <button type="button" role="switch" title="Toggle dark mode"
+                                class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f=""
+                                data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg"
+                                  aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon">
+                                  <path
+                                    d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z">
+                                  </path>
+                                </svg></button>
                               <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
                             </div>
                           </div>
@@ -201,18 +283,29 @@
                         <div class="group" data-v-d5af21fa>
                           <div class="item social-links" data-v-d5af21fa>
                             <div class="VPSocialLinks social-links-list" data-v-d5af21fa data-v-a24f9f74>
-                              <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
-                    <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US" aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-linkedin"></span></a>
-                    <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/" aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
-                    </a>
+                              <a class="VPSocialLink no-icon" href="https://github.com/Educal72"
+                                aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74
+                                data-v-2cfe8544><span class="vpi-social-github"></span></a>
+                              <a class="VPSocialLink no-icon"
+                                href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US"
+                                aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74
+                                data-v-2cfe8544><span class="vpi-social-linkedin"></span></a>
+                              <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/"
+                                aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74
+                                data-v-2cfe8544>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
+                                </svg>
+                              </a>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-cea3f7fa data-v-7380cd28>
+                  <button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation"
+                    aria-expanded="false" aria-controls="VPNavScreen" data-v-cea3f7fa data-v-7380cd28>
                     <span class="container" data-v-7380cd28>
                       <span class="top" data-v-7380cd28></span>
                       <span class="middle" data-v-7380cd28></span>
@@ -223,7 +316,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </header>
 
@@ -245,38 +338,54 @@
             <div class="VPNavScreenAppearance" data-v-19b7c1b5>
               <p class="text" data-v-19b7c1b5 data-i18n="navAppearance">Apariencia</p>
               <div style="display:flex;align-items:center;">
-                <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance" aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="moon"><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg></button>
+                <button type="button" role="switch" title="Toggle dark mode" class="CustomSwitchAppearance"
+                  aria-checked="true" data-v-83a70e2f="" data-v-5da87d95=""><svg data-v-5da87d95=""
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24"
+                    class="moon">
+                    <path
+                      d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z">
+                    </path>
+                  </svg></button>
                 <button type="button" class="lang-toggle" aria-label="Switch language">EN</button>
               </div>
             </div>
           </div>
           <div class="social-links" data-v-2860b3da>
             <div class="VPSocialLinks" data-v-a24f9f74>
-              <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-github"></span></a>
-                    <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US" aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span class="vpi-social-linkedin"></span></a>
-                    <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/" aria-label="Support subreddit" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
-                    </a>
+              <a class="VPSocialLink no-icon" href="https://github.com/Educal72" aria-label="Project GitHub"
+                target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span
+                  class="vpi-social-github"></span></a>
+              <a class="VPSocialLink no-icon" href="https://www.linkedin.com/in/eduardocalderonmora/?locale=en_US"
+                aria-label="Discord Server" target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544><span
+                  class="vpi-social-linkedin"></span></a>
+              <a class="VPSocialLink no-icon" href="https://www.reddit.com/user/AsEst1/" aria-label="Support subreddit"
+                target="_blank" rel="noopener" data-v-a24f9f74 data-v-2cfe8544>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    <main class="vp-doc setup-page">
-      <a class="back-link" href="blog.html">&larr; <span data-i18n="backToBlog">Volver al blog</span></a>
+      <main class="vp-doc setup-page">
+        <a class="back-link" href="blog.html">&larr; <span data-i18n="backToBlog">Volver al blog</span></a>
 
-      <div id="post-container">
-        <p class="empty-state" data-i18n="stateLoadingPost">Cargando entrada...</p>
-      </div>
-    </main>
+        <div id="post-container">
+          <p class="empty-state" data-i18n="stateLoadingPost">Cargando entrada...</p>
+        </div>
+      </main>
 
-    <footer class="VPFooter">
-  <p class="message">
-    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" data-i18n="footerLicense">Código abierto bajo licencia Apache</a>
-    <span class="divider">|</span>
-    <a href="/privacy.html" data-i18n="footerPrivacy">Política de Datos</a>
-  </p>
-  <p class="copyright">Copyright © 2026 Libra Server</p>
-</footer>
+      <footer class="VPFooter">
+        <p class="message">
+          <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" data-i18n="footerLicense">Código abierto
+            bajo licencia Apache</a>
+          <span class="divider">|</span>
+          <a href="/privacy.html" data-i18n="footerPrivacy">Política de Datos</a>
+        </p>
+        <p class="copyright">Copyright © 2026 Libra Server</p>
+      </footer>
 
     </div>
 
@@ -480,7 +589,7 @@
   <script>
     (() => {
       const LANG_KEY = 'site-language';
-      function getLang(){ return localStorage.getItem(LANG_KEY) || 'es'; }
+      function getLang() { return localStorage.getItem(LANG_KEY) || 'es'; }
 
       function applyLanguage(lang) {
         document.documentElement.lang = lang;
@@ -515,4 +624,5 @@
     })();
   </script>
 </body>
+
 </html>
